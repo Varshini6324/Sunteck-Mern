@@ -1,0 +1,62 @@
+###Read all users
+GET http://localhost:4000/user-api/users
+
+###Read user by object id
+GET http://localhost:4000/user-api/users/697dbad235cbd2f1485a3069
+
+
+###Create user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"varsh",
+    "password":"bhanu",
+    "age":21
+}
+
+
+###Update user
+PUT http://localhost:4000/user-api/users/697dbcd8cd6df64d02111529
+Content-Type: application/json
+
+{
+    "username":"varsh",
+    "password":"bhanu",
+    "age":20
+}
+
+
+###Delete user by id
+DELETE http://localhost:4000/user-api/users/697dbcd8cd6df64d02111529
+
+
+
+###Read all Products
+GET http://localhost:4000/product-api/products
+
+
+###Create product
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "pid":100,
+    "productName":"Laptop",
+    "price":100000
+}
+
+
+###get product by object id
+GET http://localhost:4000/product-api/products/697dd104e154ffb816f8e35b
+
+
+###update by object id
+PUT http://localhost:4000/product-api/products/697dd104e154ffb816f8e35b
+Content-Type: application/json
+
+{
+    "pid":100,
+    "productName":"Laptop",
+    "price":200000
+}
