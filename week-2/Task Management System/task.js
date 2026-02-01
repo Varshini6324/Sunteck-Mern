@@ -1,26 +1,47 @@
-import {validateDueDate,validatePriority,validateTitle} from './validator'
-//Task operations
-// TODO: Import validator functions
-// import { ... } from './validator.js';
-                    
+import { validateDueDate, validatePriority, validateTitle } from "./validator.js";
+
 const tasks = [];
-                    
-// 1. Add new task
-function addTask(title, priority, dueDate) {
-    // Validate using imported functions
-    
-    // If valid, add to tasks array
-    // Return success/error message
-}
-                    
-// 2. Get all tasks
-function getAllTasks() {
-// Return all tasks
-}
-                    
-// 3. Mark task as complete
-function completeTask(taskId) {
-// Find task and mark as complete
+let idCounter = 1;
+
+//Add new task
+//Validate using imported functions
+// If valid, add to tasks array
+// Return success/error message
+export function addTask(title, priority, dueDate) {
+  let titleCheck = validateTitle(title);
+  if (titleCheck !== true) return titleCheck;
+
+  let priorityCheck = validatePriority(priority);
+  if (priorityCheck !== true) return priorityCheck;
+
+  let dateCheck = validateDueDate(dueDate);
+  if (dateCheck !== true) return dateCheck;
+
+  const task = {
+    id: idCounter++,
+    title: title,
+    priority: priority,
+    dueDate: dueDate,
+    completed: false
+  };
+
+  tasks.push(task);
+  return "Task added successfully";
 }
 
-// Export functions
+//Get all tasks
+export function getAllTasks() {
+  return tasks;
+}
+
+//Mark task as complete
+export function completeTask(taskId) {
+  const task = tasks.find(t => t.id === taskId);
+
+  if (!task) {
+    return "Task not found";
+  }
+
+  task.completed = true;
+  return "Task completed";
+}
