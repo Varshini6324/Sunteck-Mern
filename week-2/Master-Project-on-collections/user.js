@@ -1,30 +1,34 @@
-const users = [
-  { id: 1, name: "Ravi", role: "student", active: true },
-  { id: 2, name: "Anil", role: "admin", active: true },
-  { id: 3, name: "Suman", role: "student", active: false }
-];
+/* MODULE-1 :USER PROCESSING ENGINE
+  -> Get only active users
+  -> Extract names of active users
+  -> Check if any admin exists
+  -> Find user by id
+  -> Deactivate a user immutably */
+import {users, courses, cart, roles} from './engine.js'
 
-const courses = [
-  { id: 101, title: "JavaScript", price: 999, published: true },
-  { id: 102, title: "React", price: 1499, published: false },
-  { id: 103, title: "Node", price: 1299, published: true }
-];
+// Get only active users
+let a=users.filter(ele=>ele.active===true)
+console.log("a=",a)
 
-const cart = [
-  { courseId: 101, qty: 1 },
-  { courseId: 103, qty: 2 }
-];
+//Extract names of active users
+let b=a.map(ele=>[ele.name])
+console.log("b=",b)
 
-const roles = {
-  admin: ["create", "update", "delete", "view"],
-  student: ["view"]
-};
+//Check if any admin exists
+let c=users.find(ele=>ele.role==='admin')
+console.log("c=",c)
 
+//Find user by id
+let d=users.find(ele=>ele.id===3)
+console.log(d)
 
-//MODULE-1 :USER PROCESSING ENGINE
-  //-> Get only active users
-    
-  //-> Extract names of active users
-  //-> Check if any admin exists
-  //-> Find user by id
-  //-> Deactivate a user immutably
+//Deactivate a user immutably */
+let updatedUsers = users.map(user => {
+  if (user.id === 1) {
+    return { ...user, active: false };//copies all properties of the user and overwrites the active value
+  }
+  return user;
+});
+
+console.log("Updated Users:", updatedUsers);
+console.log("Original Users:", users);
