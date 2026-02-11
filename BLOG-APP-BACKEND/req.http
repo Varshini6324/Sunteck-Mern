@@ -1,0 +1,109 @@
+### User Register
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Anurag",
+    "lastName":"User",
+    "email":"anurag.user@example.com",
+    "password":"User@1234",
+    "profileImageUrl":"https://example.com/avatars/user.png"
+}
+
+
+### Read article(USER)
+GET http://localhost:4000/user-api/articles
+
+
+### Update article(USER)
+PUT http://localhost:4000/user-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"698a38040dc9f4c8158fd70a",
+    "comment":"like it"
+}
+
+### Author Register
+POST http://localhost:4000/author-api/users
+Content-Type: application/json
+
+{
+    "firstName":"Anurag",
+    "lastName":"Author",
+    "email":"anurag.author@example.com",
+    "password":"Author@1234",
+    "profileImageUrl":"https://example.com/avatars/author.png"
+}
+
+### Author Login
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email":"anurag.author@example.com",
+    "password":"Author@1234"
+}
+
+
+### Create article(AUTHOR)
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"698a271fb33d970578495f5c",
+    "title":"test1 article",
+    "category":"programmming",
+    "content":"content of test1 article"
+}
+
+### Read article(AUTHOR)
+GET http://localhost:4000/author-api/articles/698a271fb33d970578495f5c
+
+
+
+
+### Update article (AUTHOR)
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"698a271fb33d970578495f5c",
+    "articleId":"698a38040dc9f4c8158fd70a",
+    "title":"test2 article",
+    "category":"programmming",
+    "content":"content of test2 article"
+}
+
+### Delete article(AUTHOR)
+PUT  http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "author":"698a271fb33d970578495f5c",
+    "articleId":"698a38040dc9f4c8158fd70a",
+    "isArticleActive":false
+}
+
+###Block user(admin)
+PUT http://localhost:4000/admin-api/block/698a271fb33d970578495f5c
+
+###UnBlock user(admin)
+PUT http://localhost:4000/admin-api/unblock/698a271fb33d970578495f5c
+
+###Change Password
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "email":"admin@admin.com",
+    "currentPassword":"admin",
+    "newPassword":"admin"
+}
+
+### Logout
+GET http://localhost:4000/common-api/logout
+
+
+###Test res
+GET http://localhost:4000/test
