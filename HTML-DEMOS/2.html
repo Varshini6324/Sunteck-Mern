@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="un">Username</label>
+            <input type="text" name="username" id="un" required minlength="4">
+        </div>
+        <div>
+            <label for="pw">Password</label>
+            <input type="password" name="password" id="pw">
+        </div>
+        <div>
+            <label for="em">Email</label>
+            <input type="email" name="email" id="em">
+        </div>
+        <div>
+            <label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+        <div>
+            <label for="">Choose Skills</label>
+            <div>
+                <input type="checkbox" name="html" id="html">
+                <label for="html">HTML</label>
+            </div>
+            <div>
+                <input type="checkbox" name="react" id="react">
+                <label for="react">REACT</label>
+            </div>
+        </div>
+        <div>
+            <label for="">Select Gender</label>
+            <div>
+                <input type="radio" name="gender" id="male">
+                <label for="male">MALE</label>
+            </div>
+            <div>
+                <input type="radio" name="gender" id="female">
+                <label for="female">FEMALE</label>
+            </div>
+        </div>
+        <div>
+            <label for="">Select a state</label>
+            <select name="state" id="state">
+                <option value="tg">Telangana</option>
+                <option value="ap">Andhra Predesh</option>
+            </select>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
